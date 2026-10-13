@@ -26,3 +26,29 @@ void Book::setISBN(const string& isbn) { this->isbn = isbn; }
 void Book::setAvailability(bool available) { isAvailable = available; }
 void Book::setBorrowerId(const string& id) { borrowerId = id; }
 
+// Return a book
+void Book::returnBook() {
+    isAvailable = true;
+    borrowerId = "";
+}
+
+// Display book information
+string Book::toString() const {
+    string result = "Titre : " + title +
+                    "\nAuteur : " + author +
+                    "\nISBN : " + isbn +
+                    "\nStatut : ";
+
+    if (isAvailable) {
+        result += "Disponible";
+    } else {
+        result += "Emprunté par " + borrowerId;
+    }
+    return result;
+}
+
+// Check out the book to a user
+void Book::checkOut(const string& borrowerId) {
+    isAvailable = false;
+    this->borrowerId = borrowerId;
+}
