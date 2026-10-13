@@ -74,7 +74,7 @@ string User::toFileFormat() const {
 // Parse from file format
 void User::fromFileFormat(const string& line) {
     stringstream ss(line);
-    string token;
+    string token; //what is this for??
     
     getline(ss, name, '|');
     getline(ss, userId, '|');
