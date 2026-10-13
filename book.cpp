@@ -52,3 +52,31 @@ void Book::checkOut(const string& borrowerId) {
     isAvailable = false;
     this->borrowerId = borrowerId;
 }
+
+// Format for file storage
+string Book::toFileFormat() const {
+    string result = title + "|" + author + "|" + isbn + "|";
+    result += (isAvailable ? "1" : "0");
+    result += "|" + borrowerId;
+    return result;
+}
+
+// Parse from file format
+void Book::fromFileFormat(const string& line) {
+    string cleanLine = line;
+    if (!cleanLine.empty() && cleanLine.back() == '\r') {
+        cleanLine.pop_back();
+    }
+
+    stringstream ss(cleanLine);
+
+    getline(ss, title, '|');
+    getline(ss, author, '|');
+    getline(ss, isbn, '|');
+
+    string availableStr;
+    getline(ss, availableStr, '|');
+    isAvailable = (availableStr == "1");
+
+    getline(ss, borrowerId, '|');
+}
