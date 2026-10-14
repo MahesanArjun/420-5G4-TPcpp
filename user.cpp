@@ -73,8 +73,12 @@ string User::toFileFormat() const {
 
 // Parse from file format
 void User::fromFileFormat(const string& line) {
-    stringstream ss(line);
-    string token; //what is this for??
+    string cleanLine = line;
+    if (!cleanLine.empty() && cleanLine.back() == '\r') {
+        cleanLine.pop_back();
+    }
+
+    stringstream ss(cleanLine);
     
     getline(ss, name, '|');
     getline(ss, userId, '|');
