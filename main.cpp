@@ -186,10 +186,18 @@ int main(int argc, char* argv[]) {
                 break;
             }
             
-            case 5: // Display All Books
-                library.displayAllBooks();
+            case 5: { // Display All Books
+                string sortChoice = getInput("Trier par : 1. Titre  2. Auteur  (Entrée = sans tri) : ");
+                if (sortChoice == "1") {
+                    library.displayAllBooks(1);
+                } else if (sortChoice == "2") {
+                    library.displayAllBooks(2);
+                } else {
+                    library.displayAllBooks();
+                }
                 pauseForInput();
                 break;
+            }
             
             case 6: // Display Available Books
                 library.displayAvailableBooks();

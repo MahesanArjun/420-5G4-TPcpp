@@ -39,7 +39,7 @@ public:
     bool returnBook(const string& isbn);
     
     // Display methods
-    void displayAllBooks();
+    void displayAllBooks(int sortChoice = 0);
     void displayAvailableBooks();
     void displayAllUsers();
     
