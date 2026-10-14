@@ -1,5 +1,7 @@
 #include <iostream>
 #include <algorithm>
+#include <sstream>
+#include <iomanip>
 
 #include "library.h"
 
@@ -113,6 +115,28 @@ vector<User*> Library::getAllUsers() {
         allUsers.push_back(user.get());
     }
     return allUsers;
+}
+
+// Generate the next user ID from the highest existing number
+string Library::generateNextUserId() {
+    int maxNumber = 0;
+    for (auto& user : users) {
+        string id = user->getUserId();
+        if (id.size() > 3 && id.substr(0, 3) == "USR") {
+            try {
+                int number = stoi(id.substr(3));
+                if (number > maxNumber) {
+                    maxNumber = number;
+                }
+            } catch (const exception&) {
+                // Ignore IDs that don't follow the format
+            }
+        }
+    }
+
+    ostringstream newId;
+    newId << "USR" << setw(3) << setfill('0') << (maxNumber + 1);
+    return newId.str();
 }
 
 // Check out book
