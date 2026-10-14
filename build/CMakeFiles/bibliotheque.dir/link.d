@@ -4,6 +4,7 @@ bibliotheque: \
   /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o \
   CMakeFiles/bibliotheque.dir/book.cpp.o \
   CMakeFiles/bibliotheque.dir/filemanager.cpp.o \
+  CMakeFiles/bibliotheque.dir/journal.cpp.o \
   CMakeFiles/bibliotheque.dir/library.cpp.o \
   CMakeFiles/bibliotheque.dir/main.cpp.o \
   CMakeFiles/bibliotheque.dir/user.cpp.o \
@@ -45,6 +46,8 @@ bibliotheque: \
 CMakeFiles/bibliotheque.dir/book.cpp.o:
 
 CMakeFiles/bibliotheque.dir/filemanager.cpp.o:
+
+CMakeFiles/bibliotheque.dir/journal.cpp.o:
 
 CMakeFiles/bibliotheque.dir/library.cpp.o:
 

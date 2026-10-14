@@ -177,6 +177,30 @@ filemanager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bibliotheque.dir/build.make CMakeFiles/bibliotheque.dir/filemanager.cpp.s
 .PHONY : filemanager.cpp.s
 
+journal.o: journal.cpp.o
+.PHONY : journal.o
+
+# target to build an object file
+journal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bibliotheque.dir/build.make CMakeFiles/bibliotheque.dir/journal.cpp.o
+.PHONY : journal.cpp.o
+
+journal.i: journal.cpp.i
+.PHONY : journal.i
+
+# target to preprocess a source file
+journal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bibliotheque.dir/build.make CMakeFiles/bibliotheque.dir/journal.cpp.i
+.PHONY : journal.cpp.i
+
+journal.s: journal.cpp.s
+.PHONY : journal.s
+
+# target to generate assembly for a file
+journal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bibliotheque.dir/build.make CMakeFiles/bibliotheque.dir/journal.cpp.s
+.PHONY : journal.cpp.s
+
 library.o: library.cpp.o
 .PHONY : library.o
 
@@ -264,6 +288,9 @@ help:
 	@echo "... filemanager.o"
 	@echo "... filemanager.i"
 	@echo "... filemanager.s"
+	@echo "... journal.o"
+	@echo "... journal.i"
+	@echo "... journal.s"
 	@echo "... library.o"
 	@echo "... library.i"
 	@echo "... library.s"
